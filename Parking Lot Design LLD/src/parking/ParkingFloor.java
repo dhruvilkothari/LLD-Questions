@@ -28,7 +28,7 @@ public class ParkingFloor {
     }
     public synchronized ParkingSpot findParkingSpot(Vehicle vehicle, ParkingSpotType parkingSpotType){
         for(int i=0;i<maxSize;i++){
-            if(parkingSpotList.get(i).parkingSpotType == parkingSpotType){
+            if(parkingSpotList.get(i).parkingSpotType == parkingSpotType && parkingSpotList.get(i).parkingStatus==ParkingStatus.AVAILABLE){
                 return parkingSpotList.get(i);
             }
         }

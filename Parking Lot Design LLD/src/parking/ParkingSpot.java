@@ -11,7 +11,23 @@ public abstract class ParkingSpot {
      public int basePrice;
      public int pricePerHour;
 
-     public ParkingSpot(int spotNumber,ParkingSpotType parkingSpotType, int basePrice,int pricePerHour){
+     public int getBasePrice() {
+          return basePrice;
+     }
+
+     public void setBasePrice(int basePrice) {
+          this.basePrice = basePrice;
+     }
+
+     public int getPricePerHour() {
+          return pricePerHour;
+     }
+
+     public void setPricePerHour(int pricePerHour) {
+          this.pricePerHour = pricePerHour;
+     }
+
+     public ParkingSpot(int spotNumber, ParkingSpotType parkingSpotType, int basePrice, int pricePerHour){
           this.parkingSpotType = parkingSpotType;
           this.spotNumber =spotNumber;
           this.vehicle = null;
@@ -29,7 +45,10 @@ public abstract class ParkingSpot {
      }
 
      public void setParkingStatus(ParkingStatus parkingStatus) {
-          this.parkingStatus = parkingStatus;
+          synchronized (this){
+               this.parkingStatus = parkingStatus;
+          }
+
      }
 
      public Vehicle getVehicle() {
