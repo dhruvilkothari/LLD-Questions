@@ -26,17 +26,15 @@ public class RentalStore {
         this.reservations = new HashMap<>();
         paymentProcessor = new PaymentProcessor();
     }
-    private void addVehicle(Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
         vehicles.put(vehicle.getId(), vehicle);
     }
     private void removeVehicle(Vehicle vehicle) {
         vehicles.remove(vehicle.getId());
     }
 
-    public void addReservation(Vehicle vehicle, User user, LocalDate bookingDate, LocalDate returnDate) {
-        if(vehicle.getStatus()!= Status.AVAILABLE){
-            throw new IllegalArgumentException("Vehicle is not available.");
-        }
+    public synchronized Reservation addReservation(Vehicle vehicle, User user, LocalDate bookingDate, LocalDate returnDate) {
+
         if (returnDate.isBefore(bookingDate)) {
             throw new IllegalArgumentException("Return date cannot be before booking date.");
         }
@@ -45,8 +43,13 @@ public class RentalStore {
         double totalCost = vehicle.getPricePerDay() * days;
 
         synchronized (vehicle) {
+            if(vehicle.getStatus()!= Status.AVAILABLE){
+                throw new IllegalArgumentException("Vehicle is not available.");
+            }
             Reservation reservation = new Reservation(vehicle, user, bookingDate, returnDate, totalCost);
             reservations.put(vehicle, reservation);
+            vehicle.setStatus(Status.BOOKED);
+            return reservation;
         }
     }
     public void returnVehicle(Vehicle vehicle, PaymentStratergy paymentStratergy) {
