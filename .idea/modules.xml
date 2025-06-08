@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/LLD.iml" filepath="$PROJECT_DIR$/.idea/LLD.iml" />
       <module fileurl="file://$PROJECT_DIR$/Logging Framework/Logging Framework.iml" filepath="$PROJECT_DIR$/Logging Framework/Logging Framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/Parking Lot Design LLD/Parking Lot Design LLD.iml" filepath="$PROJECT_DIR$/Parking Lot Design LLD/Parking Lot Design LLD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Room Reservation System/Room Reservation System.iml" filepath="$PROJECT_DIR$/Room Reservation System/Room Reservation System.iml" />
       <module fileurl="file://$PROJECT_DIR$/SnakeAndLadder/SnakeAndLadder.iml" filepath="$PROJECT_DIR$/SnakeAndLadder/SnakeAndLadder.iml" />
       <module fileurl="file://$PROJECT_DIR$/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/TicTacToe/TicTacToe.iml" />
     </modules>
