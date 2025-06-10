@@ -16,6 +16,7 @@ public class Main {
 
         Room  room1 = new Room(1,1, Roomtype.ECONOMY, RoomStatus.AVAILABLE,1000);
         Room  room2 = new Room(2, 2, Roomtype.LUXURY, RoomStatus.AVAILABLE, 2000);
+        // Use an enum or constant for room type instead of hardcoded string
         Room  room3 = new Room(3, 1, Roomtype.ECONOMY, RoomStatus.AVAILABLE, 1000);
 
         List<Room> rooms = List.of(room1, room2, room3);
