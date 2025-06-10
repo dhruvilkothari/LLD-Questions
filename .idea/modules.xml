@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/Room Reservation System/Room Reservation System.iml" filepath="$PROJECT_DIR$/Room Reservation System/Room Reservation System.iml" />
       <module fileurl="file://$PROJECT_DIR$/SnakeAndLadder/SnakeAndLadder.iml" filepath="$PROJECT_DIR$/SnakeAndLadder/SnakeAndLadder.iml" />
       <module fileurl="file://$PROJECT_DIR$/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/TicTacToe/TicTacToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Wallet Service/Wallet Service.iml" filepath="$PROJECT_DIR$/Wallet Service/Wallet Service.iml" />
     </modules>
   </component>
 </project>
